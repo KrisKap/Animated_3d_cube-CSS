@@ -1,0 +1,75 @@
+body{
+  background-color: #000;
+}
+
+.container{
+  height: 600px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.cube{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  100%  {transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+}
+
+.wall{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  font-family: sans-serif;
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 200px;
+  opacity: .85;
+}
+
+.rear{
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  background-color: #f1c40f;
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.front{
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+  background-color: #2980b9;
+  transform: translateZ(100px);
+}
+
+.top{
+  left: calc(50% - 100px);
+  background-color: #2ecc71;
+  transform: rotateX(90deg);
+}
+
+.bottom {
+  left: calc(50% - 100px);
+  top: 200px;
+  background-color: #8e44ad;
+  transform: rotateX(90deg) rotateY(180deg);
+}
+
+.left{
+  top: calc(50% - 100px);
+  background-color: #34495e;
+  transform: rotateY(-90deg);
+}
+
+.right{
+  left: 200px;
+  top: calc(50% - 100px);
+  background-color: #18dcff;
+  transform: rotateY(90deg);
+}
